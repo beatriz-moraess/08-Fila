@@ -59,7 +59,7 @@ void menu()
 void inicializar()
 {
 
-	// se a lista já possuir elementos
+	// se a lista jï¿½ possuir elementos
 	// libera a memoria ocupada
 	NO* aux = inicio;
 	while (aux != NULL) {
@@ -88,13 +88,37 @@ void insere()
 	cin >> novo->valor;
 	novo->prox = NULL;
 
+	if (inicio == NULL)
+{
+	inicio = novo;
+	fim = novo;
+}
+else
+{
+	fim->prox = novo;
+	fim = novo;
+
+}
+
 
 }
 
 void remove()
 {
+if (inicio == NULL)
+{
+	cout << "Fila Vazia!" << endl;
+	return;
+}
+NO* paraExcluir = inicio;
+cout << "Elemento " << inicio->valor << " sera excluido " << endl;
+inicio = inicio->prox;
 
+if (inicio == NULL)
+{
+	fim == NULL;
+}
 
-
+free(paraExcluir);
 }
 
